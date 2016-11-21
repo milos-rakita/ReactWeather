@@ -1,7 +1,10 @@
-var  React = require('reast');
+var  React = require('react');
 
 var ErrorModal = React.createClass({
-    
+    componentDidMount: function(){
+        var modal = new Foundation.Reveal($('#error-modal'));
+        modal.open();
+    },
     render:function(){
         return(
             <div id="error-modal" className="reveal tiny text-center" data-reveal>
@@ -10,7 +13,7 @@ var ErrorModal = React.createClass({
                 <p>
                     <button className="button hollow" data-close>Okey</button>
                 </p>
-                
+
             </div>
         );
     }
