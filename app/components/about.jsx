@@ -11,7 +11,7 @@ var React = require('react');
 var About = (props) => {
     return(
         <div>
-            <h3 className="text-center">About</h3>
+            <h1 className="text-center page-title">About</h1>
             <p>
                 This is a weather application build on React. 
                 I have built this for The Complete React Web App Developer Course.
@@ -29,6 +29,7 @@ var About = (props) => {
                     -I used Open Weather Map to search for wearther data by city name.
                 </li>
             </ul>
+            
         </div>
     )
 };
