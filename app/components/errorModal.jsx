@@ -1,4 +1,7 @@
-var  React = require('react');
+var React = require('react');
+var ReactDOM = require('react-dom');
+var ReactDOMServer = require('react-dom/server');
+
 
 var ErrorModal = React.createClass({
     getDefaultProps: function(){
@@ -23,6 +26,11 @@ var ErrorModal = React.createClass({
                 </p>
             </div>
         );
+
+        var $modal = $(ReactDOMServer.renderToString(modalMarkup));
+        $(ReactDOM.findDOMNode(this)).html($modal);
+        
+
         var modal = new Foundation.Reveal($('#error-modal'));
         modal.open();
     },
