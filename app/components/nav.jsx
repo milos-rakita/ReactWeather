@@ -5,7 +5,12 @@ var Nav = React.createClass({
     onSearch: function(e){
         e.preventDefault();
         var location = this.refs.search.value;
-        alert(location);
+        var encodedLocation = encodeURIComponent(location);
+
+        if (location.length > 0) {
+            this.refs.search.value = '';
+            window.location.hash = '#/?location='+encodedLocation;
+        }
 
     },
     render: function(){
@@ -25,7 +30,7 @@ var Nav = React.createClass({
                     </li>
                 </ul>
             </div>
-            <div className="top-bar-right">
+            <div className="top-bar-right"> 
                 <form onSubmit={this.onSearch}>
                     <ul className="menu">
                         <li>
